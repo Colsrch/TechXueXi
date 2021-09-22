@@ -20,7 +20,7 @@ def get_json_data(filename, template_json_str):
             except Exception as e:
                 print(filename, "解析错误：", str(e))
                 print("请检查", filename, "信息")
-                exit()
+                sys.exit()
     else:
         json_data = json.loads(template_json_str)
     return json_data
@@ -39,7 +39,7 @@ def get_conf_file(filename, template_conf_str):
         except Exception as e:
             print(filename, "解析错误：", str(e))
             print("请检查", filename, "信息")
-            exit()
+            sys.exit()
     else:
         save_text_file(filename, template_conf_str)
         conf_obj = get_conf_file(filename, template_conf_str)
